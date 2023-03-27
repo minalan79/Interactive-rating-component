@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import staricon from "./assets/images/icon-star.svg"
+import thankyou from "./assets/images/illustration-thank-you.svg"
 
 function App() {
   const [rating, setRating] = useState(0);
@@ -8,7 +10,7 @@ function App() {
   return (
     <div className="App">
       {slide == 1 && <div className="feedback">
-        <img src="./assets/images/icon-star.svg" alt="" className='star-icon'/>
+        <img src={staricon} alt="" className='star-icon'/>
         <h1 className='heading'>How did we do?</h1>
         <p className='subheading'>Please let us know how we did with your support request. All feedback is appreciated 
   to help us improve our offering!</p>
@@ -22,7 +24,7 @@ function App() {
         <button className='submit-button' onClick={() => setSlide(2)}>SUBMIT</button>
       </div>}
       {slide == 2 && <div className='thanks'>
-        <img src="./assets/public/images/illustration-thank-you.svg" alt="" />
+        <img src={thankyou} alt="" />
         <span className='selected-rating'>You selected {rating} out of 5</span>
         <h1 className='heading'>Thank you!</h1>
         <p className='subheading appreciation'>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
